@@ -53,6 +53,20 @@ item:    1 -- cmd:                    0x00ff -- ... hash:  4e1352bc799ee93c 8df9
 item:   18 -- cmd:      Authenticate Session -- ... hash:  43379c9cf352a069 7611d28f2c7ad5e9
 ```
 
+# Usage with Docker
+
+Build image:
+
+```
+docker build -t yubihsm-java-verify-audit-logs .
+```
+
+Run container:
+
+```
+docker run -v /path/to/hex_logs_directory:/logs yubihsm-java-verify-audit-logs /logs
+```
+
 # TODOs
 
 - Java for this program seems definitely overkill and I haven't verified the trustworthiness of the publicly available package `com.yubico:libyubihsm`. Evaluate to rewrite this in Python using https://github.com/Yubico/python-yubihsm or in plain Bash without any external dependency.

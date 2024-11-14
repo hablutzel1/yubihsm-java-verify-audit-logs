@@ -36,3 +36,11 @@ test {
 application {
     mainClass = 'pe.blobfish.yubihsm.Main'
 }
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'pe.blobfish.yubihsm.Main'
+        )
+    }
+}
